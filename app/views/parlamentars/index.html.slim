@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Parlamentars
+
+#parlamentars
+  - @parlamentars.each do |parlamentar|
+    == render parlamentar
+    p
+      = link_to "Show this parlamentar", parlamentar
+
+= link_to "New parlamentar", new_parlamentar_path

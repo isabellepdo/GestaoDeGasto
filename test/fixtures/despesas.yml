@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subcota: 1
+  descricao: MyString
+  especificosubcota: 1
+  descricao_especifica: MyString
+  data: 2022-10-27 19:44:10
+  vl_documento: 9.99
+  vl_liquido: 9.99
+  mes_ref: 1
+  ano_ref: 1
+  numero_parcelas: 1
+  numero_documento: MyString
+
+two:
+  subcota: 1
+  descricao: MyString
+  especificosubcota: 1
+  descricao_especifica: MyString
+  data: 2022-10-27 19:44:10
+  vl_documento: 9.99
+  vl_liquido: 9.99
+  mes_ref: 1
+  ano_ref: 1
+  numero_parcelas: 1
+  numero_documento: MyString

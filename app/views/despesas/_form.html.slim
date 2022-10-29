@@ -1,0 +1,54 @@
+= form_with(model: @despesa) do |form|
+  - if @despesa.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@despesa.errors.count, "error")} prohibited this despesa from being saved:"
+      ul
+        - @despesa.errors.each do |error|
+          li = error.full_message
+
+  div
+    = form.label :subcota, style: "display: block"
+    = form.number_field :subcota
+
+  div
+    = form.label :descricao, style: "display: block"
+    = form.text_field :descricao
+
+  div
+    = form.label :especificosubcota, style: "display: block"
+    = form.number_field :especificosubcota
+
+  div
+    = form.label :descricao_especifica, style: "display: block"
+    = form.text_field :descricao_especifica
+
+  div
+    = form.label :data, style: "display: block"
+    = form.datetime_field :data
+
+  div
+    = form.label :vl_documento, style: "display: block"
+    = form.text_field :vl_documento
+
+  div
+    = form.label :vl_liquido, style: "display: block"
+    = form.text_field :vl_liquido
+
+  div
+    = form.label :mes_ref, style: "display: block"
+    = form.number_field :mes_ref
+
+  div
+    = form.label :ano_ref, style: "display: block"
+    = form.number_field :ano_ref
+
+  div
+    = form.label :numero_parcelas, style: "display: block"
+    = form.number_field :numero_parcelas
+
+  div
+    = form.label :numero_documento, style: "display: block"
+    = form.text_field :numero_documento
+
+  div
+    = form.submit

@@ -1,0 +1,38 @@
+= form_with(model: @parlamentar) do |form|
+  - if @parlamentar.errors.any?
+    div style="color: red"
+      h2 = "#{pluralize(@parlamentar.errors.count, "error")} prohibited this parlamentar from being saved:"
+      ul
+        - @parlamentar.errors.each do |error|
+          li = error.full_message
+
+  div
+    = form.label :nome, style: "display: block"
+    = form.text_field :nome
+
+  div
+    = form.label :cpf, style: "display: block"
+    = form.text_field :cpf
+
+  div
+    = form.label :cadastro, style: "display: block"
+    = form.number_field :cadastro
+
+  div
+    = form.label :carteira_parlamentar, style: "display: block"
+    = form.number_field :carteira_parlamentar
+
+  div
+    = form.label :legislatura, style: "display: block"
+    = form.number_field :legislatura
+
+  div
+    = form.label :sigla_uf, style: "display: block"
+    = form.text_field :sigla_uf
+
+  div
+    = form.label :sigla_partido, style: "display: block"
+    = form.text_field :sigla_partido
+
+  div
+    = form.submit

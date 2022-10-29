@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Fornecedors
+
+#fornecedors
+  - @fornecedors.each do |fornecedor|
+    == render fornecedor
+    p
+      = link_to "Show this fornecedor", fornecedor
+
+= link_to "New fornecedor", new_fornecedor_path

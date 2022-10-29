@@ -1,0 +1,18 @@
+= simple_form_for(@ano_importado_csv) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    .row
+      .col-sm-10
+        = f.label "Arquivo*", class: "control-label"
+        div class="fileinput input-group fileinput-new" data-provides="fileinput"
+          div class="form-control" data-trigger="fileinput"
+            i class="icone-anexo_cotacao fileinput-exists"
+            .fileinput-filename
+
+            = f.file_field :arquivo
+          a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput" Remover
+
+  .form-actions
+    = f.button :submit, "Salvar", class: "btn btn-primary"

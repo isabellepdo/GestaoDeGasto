@@ -1,0 +1,28 @@
+.container-fluid
+	p style="color: green" = notice
+
+	h1 Acessar Arquivos importados
+
+	- @ano_importado_csvs.each do |ano_importado_csv|
+		.row 
+			.col-md-4
+				p
+					strong Arquivo:
+					=< ano_importado_csv.arquivo.blob.try(:filename)
+
+			.col-sm-4
+				p
+					strong Processado:
+					=< ano_importado_csv.processado
+			
+			.col-sm-4
+				p
+					- if ano_importado_csv.processado == false
+						= link_to processar_ano_importado_csv_path(id: ano_importado_csv.id), class: "btn btn-default btn-sm" do
+							'   Processar
+
+					- if ano_importado_csv.processado == true && ::Despesa.where(ano_importado_csv_id: ano_importado_csv.id).any?
+						= link_to despesas_path, class: "btn btn-default btn-sm" do
+							'   Acessar Dados
+
+	= link_to "New ano importado csv", new_ano_importado_csv_path

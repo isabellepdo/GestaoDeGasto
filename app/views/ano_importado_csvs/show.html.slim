@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @ano_importado_csv
+
+div
+  => link_to "Edit this ano importado csv", edit_ano_importado_csv_path(@ano_importado_csv)
+  '|
+  =< link_to "Back to ano importado csvs", ano_importado_csvs_path
+
+  = button_to "Destroy this ano importado csv", @ano_importado_csv, method: :delete

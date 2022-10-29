@@ -1,0 +1,36 @@
+div style="container"
+  p
+    strong Subcota:
+    =< despesa.desc_subcota
+  p
+    strong Subcota Especifico:
+    =< despesa.desc_especificacao_subcota
+  p
+    strong Data:
+    =< despesa.data.to_date.strftime("%d/%m/%Y")
+
+  p
+    strong Parlamentar Responsavel:
+    =< despesa.parlamentar.parlamentar_dados
+  p
+    strong Fornecedor:
+    =< despesa.fornecedor.fornecedor_dados
+
+  p
+    strong Valor documento:
+    =< "R$ #{despesa.vl_documento.to_f}" 
+  p
+    strong Valor liquido:
+    =< "R$ #{despesa.vl_liquido.to_f}"
+  p
+    strong Mês de referencia:
+    =< despesa.mes_ref
+  p
+    strong Ano ref:
+    =< despesa.ano_ref
+  p
+    strong Numero parcelas:
+    =< despesa.numero_parcelas
+  p
+    strong Numero documento:
+    =< despesa.numero_documento
